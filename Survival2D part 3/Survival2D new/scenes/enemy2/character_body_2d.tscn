@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfj174qst0ild"]
+
+[ext_resource type="Script" path="res://scenes/enemy2/character_body_2d.gd" id="1_1ssci"]
+[ext_resource type="Texture2D" uid="uid://bvr6yitwluhcf" path="res://scenes/enemy2/musuh03.png" id="2_1f2g5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m3plo"]
+radius = 14.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qxsmr"]
+
+[node name="BasicEnemy2" type="CharacterBody2D" groups=["enemy2"]]
+script = ExtResource("1_1ssci")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3, 7.5)
+scale = Vector2(0.854167, 0.84375)
+texture = ExtResource("2_1f2g5")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_m3plo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_qxsmr")
